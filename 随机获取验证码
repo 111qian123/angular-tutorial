@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>随机验证码</title>
+		<style>
+			#dd{margin: 0 5px;
+				padding: 5px;
+				background-color: #ffc;
+				border: 1px solid #fc0;}
+		</style>
+	</head>
+
+	<body>
+		<input id="input">
+		<button id="dd"></button>
+		<span id="span">点击获取验证码</span>
+		<button id="btLogin">登录</button>
+		<script>
+			var input=document.getElementById("input")
+			var dd=document.getElementById("dd")
+			var btLogin=document.getElementById("btLogin")
+			function cal(){
+				var input = String(parseInt(Math.random() * 10000));
+				if(input.length<4){
+					input="0"+input
+				}
+				dd.innerHTML=input
+			}
+			cal()
+			span.onclick=function(){
+				cal()
+			}
+			btLogin.onclick = function() {
+				if(input.value==dd.innerHTML){
+					console.log("欢迎进入网站")
+					
+				}else{
+					console.log("验证码错误")
+				}
+			}
+		</script>
+	</body>
+
+</html>
